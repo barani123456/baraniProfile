@@ -3,6 +3,25 @@
 <head>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./css/style1.css" />
+  <style>
+    /* === ラジオボタンは非表示 ================== */
+    #sample1 input[type="radio"]{
+      display    : none;
+    }
+
+    /* === 各ラジオボタンのラベルをボタンに変更 == */
+    #sample1 label{
+      display    : inline-block;
+      border     : 1px solid #ccc;
+      box-shadow : 2px 2px #999;
+      padding    : 2px 6px;
+    }
+
+    /* === 選択されている言語のラベル色を変更 ==== */
+    #sample1 input[type="radio"]:checked + label {
+      background : greenyellow;
+    }
+  </style>
 </head>
 <body>
   <section class="vh-100" style="background-color: #f4f5f7;">
@@ -18,70 +37,122 @@
                   <img src="./photo/barani.jpg"
                   alt="Avatar" class="img-fluid my-5" style="width: 200px;" />
                 </a>
-                <div id = "languageSwitcher">
-                   <button onclick = "changeLanguage('ja')"> JAPAN </button>
-                  <button onclick = "changeLanguage('en')"> ENGLISH </button>
+                <div id="sample1">
+                  <input type="radio" name="langKbn" id="sJa" onClick="langSet('ja')" checked>
+                  <label for="sJa">
+                    <span class="langCng" lang="ja">日本語</span>
+                    <span class="langCng" lang="en">Japanese</span>
+                    <span class="langCng" lang="zh">日本</span>
+                  </label>
+
+                  <input type="radio" name="langKbn" id="sEn" onClick="langSet('en')">
+                  <label for="sEn">
+                    <span class="langCng" lang="ja">英語</span>
+                    <span class="langCng" lang="en">English</span>
+                    <span class="langCng" lang="zh">英语</span>
+                  </label>
                 </div>
               </div>
-              <h3>BARANI MAUNGMAUNG</h3>
-              <p><b>IT ENGINEER IN JAPAN</b></p>
+              <h3 class="langCng" lang="ja">バラ二マウンマウン</h3>
+              <p class="langCng" lang="ja"><b>ITエンジニア</b></p>
+              <h3 class="langCng" lang="en">BARANI MAUNGMAUNG</h3>
+              <p class="langCng" lang="en"><b>IT ENGINEER IN JAPAN</b></p>
             </div>
             <div class="col-md-8">
               <div class="card-body p-4">
 
                 <hr class="mt-0 mb-4">
                 <div class="row pt-1">
-                  <div class="col-6 mb-3">
-                    <h3>PROJECTS</h3>
-                    <h4>Web Design</h4>
-                    <p class="text-muted"><a href="https://barani123456.github.io/yoga/" title="yoga">YOGA WEBSITE</a></p>
-                    <p class="text-muted"><a href="https://barani123456.github.io/OnlineShopping/" title="onlineshopping">ONLINE SHOPPING WEBSITE</a></p>
-                    <p class="text-muted"><a href="https://barani123456.github.io/furniture/" title="furniture">HOME FURNITURE WEBSITE</a></p>
-                    <p class="text-muted"><a href="https://barani123456.github.io/Travel/" title="Travel">AROUND THE WORLD</a></p>
-                    <p class="text-muted"><a href="https://barani123456.github.io/snow/" title="snow">HELLO KITTY INSPIRE</a></p>
-                  </div>
-                  <div class="col-6 mb-3">
-                    <h3>SKILLS</h3>
-                    <h4 style="color: #eb8334;">
-                      <p class="text-muted">Language:Java,HTML,CSS,JavaScript,Jquery </p>
-                      <p class="text-muted">Framework:Java Spring,Structs,Bootstrap3,4</p>
-                      <p class="text-muted">Database:Oracle,MySQL,PostgresSQL,IBM DB2</p>
-                      <p class="text-muted">Windows:Windows7,Windows8,Windows10,Windows11,MacOS,Linux(CentOS)</p>
-                      <p class="text-muted">Server:SVN,Git</p>
-                      <p class="text-muted">Other Tool:Redmine,Justinmind(Protype tool),FFFTP,WinMerge,Eclipse Photon,Sublime text,Excel,Word<p>
+                 <div class="col-6 mb-3">
+                  <h3 class="langCng" lang="ja">プロジェクト</h3>
+                  <h4 class="langCng" lang="ja">ウェブデザイン</h4>
+                  <h3 class="langCng" lang="en">PROJECTS</h3>
+                  <h4 class="langCng" lang="en">Web Design</h4>
+                  <p class="langCng" lang="ja"><a href="https://barani123456.github.io/yoga/" title="yoga">ヨガウェブサイト</a></p>
+                  <p class="langCng" lang="ja"><a href="https://barani123456.github.io/OnlineShopping/" title="onlineshopping">オンライン ショッピング ウェブサイト</a></p>
+                  <p class="langCng" lang="ja"><a href="https://barani123456.github.io/furniture/" title="furniture">ホーム家具ウェブサイト</a></p>
+                  <p class="langCng" lang="ja"><a href="https://barani123456.github.io/Travel/" title="Travel">旅行ウェブサイト</a></p>
+                  <p class="langCng" lang="ja"><a href="https://barani123456.github.io/snow/" title="snow">ハローキティのインスピレーション</a></p>
+                  <p class="langCng" lang="en"><a href="https://barani123456.github.io/yoga/" title="yoga">YOGA WEBSITE</a></p>
+                  <p class="langCng" lang="en"><a href="https://barani123456.github.io/OnlineShopping/" title="onlineshopping">ONLINE SHOPPING WEBSITE</a></p>
+                  <p class="langCng" lang="en"><a href="https://barani123456.github.io/furniture/" title="furniture">HOME FURNITURE WEBSITE</a></p>
+                  <p class="langCng" lang="en"><a href="https://barani123456.github.io/Travel/" title="Travel">AROUND THE WORLD</a></p>
+                  <p class="langCng" lang="en"><a href="https://barani123456.github.io/snow/" title="snow">HELLO KITTY INSPIRE</a></p>
+                </div>
+                <div class="col-6 mb-3">
+                  <h3>SKILLS</h3>
+                  <h4 style="color: #eb8334;">
+                    <p class="langCng" lang="ja">言語:Java、HTML、CSS、JavaScript、Jquery </p>
+                    <p class="langCng" lang="ja">フレームワーク:Java Spring、Structs、Bootstrap3、4</p>
+                    <p class="langCng" lang="ja">データベース:Oracle、MySQL、PostgresSQL、IBM DB2</p>
+                    <p class="langCng" lang="ja">Windows:Windows7、Windows8、Windows10、Windows11、MacOS、Linux(CentOS)</p>
+                    <p class="langCng" lang="ja">サーバー:SVN、Git</p>
+                    <p class="langCng" lang="ja">その他のツール:Redmine、Justinmind(プロタイプ ツール)、FFFTP、WinMerge、Eclipse Photon、Sublime text、Excel、Word<p>
+                      <p class="langCng" lang="en">Language:Java,HTML,CSS,JavaScript,Jquery </p>
+                      <p class="langCng" lang="en">Framework:Java Spring,Structs,Bootstrap3,4</p>
+                      <p class="langCng" lang="en">Database:Oracle,MySQL,PostgresSQL,IBM DB2</p>
+                      <p class="langCng" lang="en">Windows:Windows7,Windows8,Windows10,Windows11,MacOS,Linux(CentOS)</p>
+                      <p class="langCng" lang="en">Server:SVN,Git</p>
+                      <p class="langCng" lang="en">Other Tools:Redmine,Justinmind(Protype tool),FFFTP,WinMerge,Eclipse Photon,Sublime text,Excel,Word<p>
                       </h4>
                     </div>
                     <div class="col-6 mb-3">
                       <h3>Qualifications </h3>
                       <h4 style="color: black;">
-                        <p>Japanese Language Proficiency Test JLPT-N3 2016/12</p> 
-                        <p>Japanese language test NAT TEST Level 2  2019/04</p>
-                        <p>Japanese Language Proficiency Test JLPT-N2 2019/12</p>
-                        <p> OCJP Bronze 2020/05</p>
-                        <p>Japanese Language Proficiency Evaluation Test  2020/07</p>
-                        <p> Japanese Language Proficiency Test JLPT-N1  2022/07</p>                                     
-                      </h4>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+                       <p class="langCng" lang="ja">・日本語能力試験JLPT-N3  2016年12月</p>
+                       <p class="langCng" lang="ja">・日本語試験NAT TEST 2級  2019年04月</p>
+                       <p class="langCng" lang="ja">・日本語能力試験JLPT-N2  2019年12月</p>
+                       <p class="langCng" lang="ja"> ・OCJP Bronze 2020年05月</p>
+                       <p class="langCng" lang="ja">・日本語試験力評価試験 2020年05月</p>
+                       <p class="langCng" lang="ja">・日本語能力試験JLPT-N1 2022年07月</p>
+                       <p class="langCng" lang="en">Japanese Language Proficiency Test JLPT-N3 2016/12</p> 
+                       <p class="langCng" lang="en">Japanese language test NAT TEST Level 2  2019/04</p>
+                       <p class="langCng" lang="en">Japanese Language Proficiency Test JLPT-N2 2019/12</p>
+                       <p class="langCng" lang="en"> OCJP Bronze 2020/05</p>
+                       <p class="langCng" lang="en">Japanese Language Proficiency Evaluation Test  2020/07</p>
+                       <p class="langCng" lang="en"> Japanese Language Proficiency Test JLPT-N1  2022/07</p>                                    
+                     </h4>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
 </section>
 <script type="text/javascript">
-  function changeLanguage(lang) {
-   let element = document.getElementById("div");
-   if (lang == "en") {
-  location.reload(true);
-  } else if (lang == "ja") {
-    const url = 'userProfileJapan.html'
-    window.open(url, '_blank')
+// =========================================================
+ //      画面が開かれたときの初期設定
+ // =========================================================
+  window.onload = function() {
+
+  // --- ブラウザのデフォルト言語を取得して初回の表示 ----- 
+    var wDef = (navigator.browserLanguage || navigator.language || navigator.userLanguage).substr(0,2);
+    langSet(wDef);
+
   }
-}
+ // =========================================================
+ //      選択された言語のみ表示
+ // =========================================================
+  function langSet(argLang){
+
+  // --- 切り替え対象のclass一覧を取得 ----------------------
+    var elm = document.getElementsByClassName("langCng");
+
+    for (var i = 0; i < elm.length; i++) {
+
+    // --- 選択された言語と一致は表示、その他は非表示 -------
+      if(elm[i].getAttribute("lang") == argLang){
+        elm[i].style.display = '';
+      }
+      else{
+        elm[i].style.display = 'none';
+      }
+    }
+  }
 </script>
 </body>
 </html>
