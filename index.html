@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Profile </title>
+	<link rel="stylesheet" href="./css/baraniProfile.css" />
+</head>
+<body>
+	<aside class="profile-card">
+		<header>
+			<a target="_blank" href="https://barani123456.github.io/baraniProfile/userProfileJapan.html" title="READ MORE profile-bio">
+				<img src="./photo/barani.jpg" class="hoverZoomLink">
+			</a>
+			<div id="sample1">
+				<input type="radio" name="langKbn" id="sJa" onClick="langSet('ja')" checked>
+				<label for="sJa">
+					<span class="langCng" lang="ja">日本語</span>
+					<span class="langCng" lang="en">Japanese</span>
+					<span class="langCng" lang="zh">日本</span>
+				</label>
+
+				<input type="radio" name="langKbn" id="sEn" onClick="langSet('en')">
+				<label for="sEn">
+					<span class="langCng" lang="ja">英語</span>
+					<span class="langCng" lang="en">English</span>
+					<span class="langCng" lang="zh">英语</span>
+				</label>
+
+			 
+				<br><br>
+<!-- the username -->
+<h1 class="langCng" lang="ja"> バラ二マウンマウン</h1>
+<h1 class="langCng" lang="en"> BARANI MAUNGMAUNG</h1>
+<!-- and role or location -->
+</header>
+<div class="profile-bio">
+	<h3 class="langCng" lang="ja">自己PR</h3>
+	<h3 class="langCng" lang="en">INTRODUCTION</h3>
+	<p class="langCng" lang="ja" align="justify">
+		コンピューター大学卒業後にNTTデータミャンマーでオープン・WEB系の開発プログラマーとして2年間勤務しておりました。 
+		2017年に来日し、様々なソフトウェア開発現場に長期に渡り勤務してきました。 
+		その都度新しい技術に取り組み、製品の品質アップに力を入れてきました。 
+		また、お客様の要望をヒアリングして基本設計、開発から納品までの一連の業務にも携わってきました。 
+		様々な角度からコードを見直し、より高機能でレスポンスのよいプログラミングが出来るよう技術を磨きたいと考えております。 
+		今後はより大規模なフィールドでPL・PMを目指したいと考えております。 
+	</p>
+	<p class="langCng" lang="en" align="justify">
+		After graduating from computer university, I worked for two years as an open web development programmer at NTT Data Myanmar.
+		I came to Japan in 2017 and have worked at various software development sites for a long time.
+		Each time, we have worked on new technologies and put effort into improving the quality of our products.
+		I have also been participated in a series of operations from listening to customer requests, basic design, and development to delivery.
+		I would like to review the code from many resources and hone my skills to be able to create more highly functional and responsive programming.
+		In the future, I would like to aim for PL/PM in a larger field.
+	</p>
+	</div>
+</div>
+</aside>
+<script type="text/javascript">
+// =========================================================
+ //      画面が開かれたときの初期設定
+ // =========================================================
+	window.onload = function() {
+
+  // --- ブラウザのデフォルト言語を取得して初回の表示 ----- 
+		var wDef = (navigator.browserLanguage || navigator.language || navigator.userLanguage).substr(0,2);
+		langSet(wDef);
+
+	}
+ // =========================================================
+ //      選択された言語のみ表示
+ // =========================================================
+	function langSet(argLang){
+
+  // --- 切り替え対象のclass一覧を取得 ----------------------
+		var elm = document.getElementsByClassName("langCng");
+
+		for (var i = 0; i < elm.length; i++) {
+
+    // --- 選択された言語と一致は表示、その他は非表示 -------
+			if(elm[i].getAttribute("lang") == argLang){
+				elm[i].style.display = '';
+			}
+			else{
+				elm[i].style.display = 'none';
+			}
+		}
+	}
+</script>
+</body>
+</html>
