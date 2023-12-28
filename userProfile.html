@@ -25,6 +25,8 @@
 </head>
 <body>
   <section class="vh-100" style="background-color: #f4f5f7;">
+    <div class="langCng" lang="ja" id="timejapan" align="right"></div>
+   <div class="langCng" lang="en" id="timeenglish" align="right"></div>
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col col-lg-6 mb-4 mb-lg-0">
@@ -158,5 +160,45 @@
     }
   }
 </script>
+  <script type="text/javascript">
+        timerID = setInterval('clock()',500);
+        function clock() {
+          document.getElementById("timejapan").innerHTML = getNow();
+        }
+        function getNow() {
+          var now = new Date();
+          var year = now.getFullYear();
+          var mon = ('0' + (now.getMonth() + 1)).slice(-2);
+          var day = ('0' + now.getDate()).slice(-2);
+          var hour = ('0' + now.getHours()).slice(-2);
+          var min = ('0' + now.getMinutes()).slice(-2);
+          var sec = ('0' + now.getSeconds()).slice(-2);
+          var week = now.getDay();
+          var weekItems = ["日", "月", "火", "水", "木", "金", "土"];
+          var dayOfWeek = weekItems[week];
+          var s = year + "年" + mon + "月" + day + "日" +"("+dayOfWeek +") "+ hour + ":" + min + ":" + sec; 
+          return s;
+        }
+      </script>
+      <script type="text/javascript">
+        timerID = setInterval('clock1()',500);
+        function clock1() {
+          document.getElementById("timeenglish").innerHTML = getNow1();
+        }
+        function getNow1() {
+          var now = new Date();
+          var year = now.getFullYear();
+          var mon = ('0' + (now.getMonth() + 1)).slice(-2);
+          var day = ('0' + now.getDate()).slice(-2);
+          var hour = ('0' + now.getHours()).slice(-2);
+          var min = ('0' + now.getMinutes()).slice(-2);
+          var sec = ('0' + now.getSeconds()).slice(-2);
+          var week = now.getDay();
+          var weekItems = ["mon", "tues", "wed", "thurs", "fri", "sat", "sun"];
+          var dayOfWeek = weekItems[week];
+          var s = year + "/" + mon + "/" + day + " " +"("+dayOfWeek +") "+ hour + ":" + min + ":" + sec; 
+          return s;
+        }
+      </script>
 </body>
 </html>
